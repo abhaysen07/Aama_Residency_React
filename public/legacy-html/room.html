@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rooms — Aama Residency</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="room-page">
+  <!-- ====== HEADER SECTION ====== -->
+    <header>
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-item active">Home</a></li>
+                <li><a href="about.html" class="nav-item">About Us</a></li>
+                <li><a href="room.html" class="nav-item">Rooms</a></li>
+                <li><a href="services.html" class="nav-item">Services</a></li>
+                <li><a href="contact.html" class="nav-item">Contact</a></li>
+            </ul>
+            <div class="nav-auth">
+                <!-- note: auth-btn also has nav-item so it uses same glow/active style -->
+                <a href="authentication.html" class="auth-btn nav-item">Log In/Signup</a>
+            </div>
+        </nav>
+    </header>
+
+  <main>
+    <section class="rooms-list">
+      <h1>Our Rooms</h1>
+      <p>Choose from Standard, Deluxe, and Family Suite options — affordable and clean.</p>
+
+      <div class="room-grid">
+        <!-- Standard -->
+        <article class="room-type">
+          <h3>Standard Room</h3>
+          <p>Compact, neat — ideal for solo travelers and short stays.</p>
+          <img src="images/standard-room.png" alt="Standard Room Image" width="300" height="200">
+        </article>
+
+        <!-- Deluxe -->
+        <article class="room-type">
+          <h3>Deluxe Room</h3>
+          <p>Roomier layout, better furnishings, more comfort for longer stays.</p>
+          <img src="images/room.png" alt="Deluxe Room Image" width="300">
+        </article>
+
+        <!-- Family -->
+        <article class="room-type">
+          <h3>Family Suite</h3>
+          <p>Extra beds and space — perfect for families or group travellers.</p>
+          <img src="images/family-suite.png" alt="Family Room Image" width="300">
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Aama Residency. All rights reserved.</p>
+  </footer>
+
+  <!-- include same robust script.js you updated -->
+  <script src="script.js"></script>
+</body>
+</html>

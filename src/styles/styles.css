@@ -1,0 +1,336 @@
+/* ============================================================
+   AAMA RESIDENCY — Responsive & Robust Stylesheet (Final)
+   Author: Abhishek Kumar (updated)
+   Date Updated: 20 Nov 2025
+   Notes: Full responsive behavior, fixed navbar, accessible CTAs,
+          robust CSS-only nav active fix, minimal global footer.
+   ============================================================ */
+
+/* =========================
+   0. GLOBAL: BOX-SIZING + VARIABLES
+   ========================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Theme tokens — tweak these to change the look quickly */
+:root {
+  --nav-height: 70px;
+  --page-bg: #c4ab7b;           /* warm cream */
+  --nav-bg: #78C7B1;            /* navbar background */
+  --accent: #007bff;
+  --accent-blue: #0288D1;
+  --accent-light: #4FC3F7;
+  --gold-1: #FFD700;
+  --gold-2: #FFB300;
+  --text-dark: #2b2b2b;
+  --muted: #5b6f6d;
+  --max-width: 1200px;
+  --container-pad: 16px;
+  --radius: 12px;
+  --transition-fast: 0.18s;
+  --shadow-soft: 0 6px 18px rgba(43,43,43,0.08);
+  --glow: 0 0 10px rgba(255,255,255,0.6);
+}
+
+/* =========================
+   1. GLOBAL BODY & BASE
+   ========================= */
+html, body, #root { height: 100%; }
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  text-align: center;
+  background-color: var(--page-bg);
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  color: var(--text-dark);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.45;
+  padding-top: calc(var(--nav-height) + 12px); /* reserve space under fixed nav */
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Page container helper */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-pad);
+}
+
+/* Small helpers */
+.hidden { display: none !important; }
+.text-center { text-align: center; }
+.muted { color: var(--muted); }
+
+/* =========================
+   2. NAVBAR — fixed, responsive, accessible
+   ========================= */
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: var(--nav-height);
+  background: var(--nav-bg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 18px;
+  z-index: 1200;
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(6px);
+}
+
+/* Brand area */
+.nav-brand, .brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--text-dark);
+  text-decoration: none;
+}
+.brand-title {
+  font-weight: 800;
+  font-size: 1.05rem;
+  letter-spacing: -0.01em;
+}
+
+/* logo sizing (if used) */
+.brand-logo {
+  height: 40px;
+  width: auto;
+  display: inline-block;
+  object-fit: contain;
+  border-radius: 6px;
+}
+
+/* Nav links group */
+.nav-links {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* link style */
+.nav-item {
+  text-decoration: none;
+  color: var(--text-dark);
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: background var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+  display: inline-block;
+}
+
+/* hover & focus */
+.nav-item:hover,
+.nav-item:focus {
+  background: rgba(255,255,255,0.16);
+  transform: translateY(-2px);
+  box-shadow: var(--glow);
+  outline: none;
+}
+
+/* active (NavLink .active) */
+.nav-item.active {
+  background: rgba(255,255,255,0.32);
+  color: #063b34;
+  box-shadow: 0 0 14px rgba(255,255,255,0.7);
+  transform: translateY(-1px);
+}
+
+/* auth button (right side) */
+.nav-auth .auth-btn {
+  background: linear-gradient(180deg, var(--accent), var(--accent-blue));
+  color: #fff;
+  font-weight: 800;
+  padding: 8px 14px;
+  border-radius: 10px;
+  text-decoration: none;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+.nav-auth .auth-btn:hover { transform: translateY(-2px); }
+
+/* mobile-only auth item inside menu */
+.nav-auth-mobile { display: none; }
+
+/* hamburger (hidden on desktop) */
+.hamburger {
+  display: none;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  padding: 10px;
+}
+.hamburger-box { width: 26px; height: 18px; position: relative; display: inline-block; }
+.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+  background: rgba(10,30,30,0.9);
+  height: 2px;
+  border-radius: 2px;
+  position: absolute;
+  left: 0; right: 0;
+  transition: transform 180ms ease, opacity 180ms ease;
+}
+.hamburger-inner { top: 50%; transform: translateY(-50%); }
+.hamburger-inner::before { content: ""; top: -7px; }
+.hamburger-inner::after { content: ""; top: 7px; }
+
+/* =========================
+   3. RESPONSIVE NAV MENU (mobile slide-down)
+   ========================= */
+@media (max-width: 920px) {
+  .hamburger { display: block; }
+  .nav-auth { display: none; }
+
+  .nav-links {
+    position: absolute;
+    top: var(--nav-height);
+    left: 0;
+    right: 0;
+    background: var(--nav-bg);
+    flex-direction: column;
+    gap: 0;
+    padding: 12px 14px;
+    transform-origin: top;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 240ms ease;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    border-bottom-left-radius: 14px;
+    border-bottom-right-radius: 14px;
+  }
+
+  /* open class from JS */
+  .nav-links.open { max-height: 520px; }
+
+  .nav-links li { width: 100%; margin: 6px 0; }
+  .nav-links a { display: block; width: 100%; padding: 12px; border-radius: 8px; }
+
+  .nav-auth-mobile { display: block; margin-top: 8px; }
+
+  .brand-title { font-size: 1rem; }
+}
+
+/* =========================
+   4. PAGE LAYOUT — hero / intro / content containers
+   ========================= */
+.site-container {
+  padding-top: var(--nav-height);
+  min-height: calc(100vh - var(--nav-height));
+  width: 100%;
+}
+
+/* hero intro — centered and readable */
+.intro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 56px 18px;
+  text-align: center;
+}
+.intro-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+.intro-content h1 {
+  font-size: 2.6rem;
+  margin-bottom: 12px;
+  color: #063b34;
+  font-weight: 800;
+}
+.intro-content p {
+  font-size: 1.05rem;
+  margin-bottom: 20px;
+  color: #2f4f4a;
+  line-height: 1.65;
+}
+
+/* global CTA */
+.global-book-btn {
+  display: inline-block;
+  padding: 12px 22px;
+  background: linear-gradient(180deg, var(--gold-1), var(--gold-2));
+  color: #122; /* dark text on gold */
+  font-weight: 800;
+  border-radius: 12px;
+  text-decoration: none;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+.global-book-btn:hover { transform: translateY(-3px); }
+
+/* content sections */
+.about, .rooms-services {
+  padding: 36px 18px;
+}
+.container-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+/* room-card */
+.room-card {
+  margin-top: 18px;
+  background: rgba(255,255,255,0.9);
+  padding: 18px;
+  border-radius: 12px;
+  box-shadow: var(--shadow-soft);
+}
+.room-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 12px;
+}
+.room-type {
+  background: rgba(255,255,255,0.95);
+  padding: 14px;
+  border-radius: 10px;
+  text-align: left;
+}
+.room-type h4 { margin: 0 0 8px 0; }
+.room-meta { color: var(--muted); font-size: 0.95rem; }
+
+/* services list */
+.services-brief ul { margin: 8px 0 0 18px; text-align: left; }
+
+/* =========================
+   5. FOOTER
+   ========================= */
+footer {
+  margin-top: 30px;
+  padding: 18px;
+  background: transparent;
+  color: var(--text-dark);
+  text-align: center;
+  border-top: 1px solid rgba(0,0,0,0.04);
+}
+
+/* =========================
+   6. ACCESSIBILITY + SMALL HELPERS
+   ========================= */
+:focus { outline: none; }
+.nav-item:focus, .auth-btn:focus, .hamburger:focus {
+  box-shadow: 0 0 0 6px rgba(3,54,46,0.08);
+  border-radius: 8px;
+}
+
+/* utilities */
+.mb-8 { margin-bottom: 2rem; }
+.hidden { display: none !important; }
+
+/* =========================
+   7. TWEAKS: print & small screens
+   ========================= */
+@media (max-width: 420px) {
+  .intro-content h1 { font-size: 1.6rem; }
+  .global-book-btn { padding: 10px 14px; }
+}

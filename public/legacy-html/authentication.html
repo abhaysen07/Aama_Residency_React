@@ -1,0 +1,66 @@
+<!-- ============================================================
+     Aama Residency — index.html
+     Author: Abhishek Kumar
+     Role: Founder & Developer
+     Email: abhishek.abhishek1996@gmail.com
+     Date Created: 13 October 2025
+     Description: Primary landing page of Aama Residency Website.
+     Notes: Uses css/styles.css for theme and script.js for live date/time.
+     ============================================================ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ====== META INFORMATION ====== -->
+    <meta charset="UTF-8"> <!-- character encoding -->
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- responsive viewport -->
+    <meta name="author" content="Abhishek Kumar"> <!-- author meta -->
+    <title>Aama Residency</title> <!-- browser tab title -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico"> <!-- favicon -->
+
+    <!-- ====== STYLESHEET LINK ====== -->
+    <link rel="stylesheet" href="css/styles.css"> <!-- main stylesheet (includes .global-book-btn) -->
+</head>
+<body>
+    <!-- ====== HEADER SECTION ====== -->
+    <!-- ====== HEADER SECTION ====== -->
+    <header>
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-item active">Home</a></li>
+                <li><a href="about.html" class="nav-item">About Us</a></li>
+                <li><a href="room.html" class="nav-item">Rooms</a></li>
+                <li><a href="services.html" class="nav-item">Services</a></li>
+                <li><a href="contact.html" class="nav-item">Contact</a></li>
+            </ul>
+            <div class="nav-auth">
+                <!-- note: auth-btn also has nav-item so it uses same glow/active style -->
+                <a href="authentication.html" class="auth-btn nav-item">Log In/Signup</a>
+            </div>
+        </nav>
+    </header>
+    <div class="login-page-wrapper">
+        <div class="login-box">
+            <h2>Login</h2>
+            <!-- avatar image -->
+            <img src="images/agent.png" class="login-avatar" height="30" width="20">
+            <!-- heart globe (reduce size) -->
+            <div class="input-field">
+                <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" class="input-icon" width="200" height="300">
+                <input type="text" placeholder="Username">
+            </div>
+            <div class="input-field">
+                <img src="https://cdn-icons-png.flaticon.com/512/2913/2913118.png" class="input-icon" width="200" height="300">
+                <input type="password" placeholder="Password">
+            </div>
+            <div class="remember-forgot">
+                <label><input type="checkbox"> Remember me</label>
+                <a href="#">Forgot password?</a>
+            </div>
+            <button class="login-btn">Login</button>
+            <p class="register">Don't have an account?
+                <a href="register.html">Register</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

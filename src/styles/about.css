@@ -1,0 +1,259 @@
+/* ============================================================
+   ABOUT PAGE — AAMA RESIDENCY
+   Design matches global warm-cream theme and section layout
+   ============================================================ */
+
+/* Page wrapper */
+.about-page {
+  background: var(--page-bg, #c4ab7b);
+  padding-top: var(--nav-height);
+  width: 100%;
+  min-height: 100%;
+}
+
+/* General container */
+.container-inner {
+  max-width: var(--max-width, 1200px);
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* ---------------------------------------
+   HERO SECTION
+------------------------------------------ */
+.hero-about {
+  padding: 50px 16px 30px;
+  text-align: center;
+}
+
+.hero-about h1 {
+  color: #063b34;
+  font-weight: 800;
+  font-size: 2.4rem;
+  margin-bottom: 10px;
+}
+
+.hero-about p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 900px;
+  margin: 0 auto;
+  color: #2f4f4a;
+}
+
+/* ---------------------------------------
+   STORY SECTION
+------------------------------------------ */
+.story {
+  padding: 30px 16px;
+  text-align: left;
+}
+
+.story h2 {
+  color: #063b34;
+  margin-bottom: 12px;
+  font-size: 1.8rem;
+  font-weight: 800;
+}
+
+.story p {
+  margin-bottom: 14px;
+  color: #2f4f4a;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+/* ---------------------------------------
+   INFRASTRUCTURE SECTION
+------------------------------------------ */
+.infra {
+  padding: 30px 16px;
+  text-align: left;
+}
+
+.infra h2 {
+  font-size: 1.8rem;
+  color: #063b34;
+  margin-bottom: 10px;
+}
+
+.infra-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.infra-card {
+  background: rgba(255, 255, 255, 0.92);
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: var(--shadow-soft, 0 6px 18px rgba(0,0,0,0.15));
+}
+
+.infra-card h3 {
+  margin-bottom: 6px;
+  color: #063b34;
+  font-size: 1.2rem;
+}
+
+.infra-card p {
+  color: #2f4f4a;
+  line-height: 1.5;
+}
+
+/* ---------------------------------------
+   GALLERY SECTION
+------------------------------------------ */
+.gallery {
+  padding: 32px 16px;
+  text-align: center;
+}
+
+.gallery h2 {
+  margin-bottom: 12px;
+  font-size: 1.8rem;
+  color: #063b34;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+  justify-items: center;
+}
+
+.gallery-grid img {
+  width: 100%;
+  max-width: 320px;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: var(--shadow-soft, 0 6px 18px rgba(0,0,0,0.15));
+}
+
+/* ---------------------------------------
+   TEAM SECTION
+------------------------------------------ */
+.team {
+  padding: 32px 16px;
+  text-align: center;
+}
+
+.team h2 {
+  margin-bottom: 12px;
+  font-size: 1.8rem;
+  color: #063b34;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.team-card {
+  background: rgba(255, 255, 255, 0.92);
+  padding: 18px;
+  border-radius: 14px;
+  text-align: center;
+  box-shadow: var(--shadow-soft, 0 6px 18px rgba(0,0,0,0.15));
+}
+
+.team-card img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 8px;
+}
+
+.team-card h4 {
+  margin-bottom: 4px;
+  color: #063b34;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.team-card p {
+  color: #2f4f4a;
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+}
+
+/* ---------------------------------------
+   MAP SECTION
+------------------------------------------ */
+.map {
+  padding: 32px 16px;
+  text-align: center;
+}
+
+.map h2 {
+  margin-bottom: 12px;
+  font-size: 1.8rem;
+  color: #063b34;
+}
+
+.map-wrap {
+  width: 100%;
+  max-width: 900px;
+  height: 400px;
+  margin: 0 auto;
+}
+
+.map iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 12px;
+  box-shadow: var(--shadow-soft, 0 6px 18px rgba(0,0,0,0.15));
+}
+
+/* ---------------------------------------
+   CTA SECTION
+------------------------------------------ */
+.cta {
+  padding: 40px 16px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 14px;
+  margin: 32px 16px;
+}
+
+.cta h2 {
+  color: #063b34;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.cta p {
+  color: #2f4f4a;
+  margin-bottom: 14px;
+  font-size: 1.05rem;
+}
+
+.cta .btn {
+  display: inline-block;
+  padding: 12px 22px;
+  background: linear-gradient(180deg, #FFD700, #FFB300);
+  color: #122;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 800;
+  transition: transform 0.2s ease;
+}
+
+.cta .btn:hover {
+  transform: translateY(-3px);
+}
+
+/* ---------------------------------------
+   FOOTER
+------------------------------------------ */
+footer {
+  padding: 20px 16px;
+  text-align: center;
+  color: #3b3b3b;
+  margin-top: 20px;
+}

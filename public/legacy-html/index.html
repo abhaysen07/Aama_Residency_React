@@ -1,0 +1,151 @@
+<!-- ============================================================
+     Aama Residency — index.html
+     Author: Abhishek Kumar
+     Role: Founder & Developer
+     Email: abhishek.abhishek1996@gmail.com
+     Date Created: 13 October 2025
+     Description: Primary landing page of Aama Residency Website.
+     Notes: Uses css/styles.css for theme and script.js for live date/time.
+     ============================================================ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ====== META INFORMATION ====== -->
+    <meta charset="UTF-8"> <!-- character encoding -->
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- responsive viewport -->
+    <meta name="author" content="Abhishek Kumar"> <!-- author meta -->
+    <title>Aama Residency</title> <!-- browser tab title -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico"> <!-- favicon -->
+
+    <!-- ====== STYLESHEET LINK ====== -->
+    <link rel="stylesheet" href="css/styles.css"> <!-- main stylesheet (includes .global-book-btn) -->
+</head>
+<body class="home-page">
+    <!-- ====== HEADER SECTION ====== -->
+    <header>
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-item active">Home</a></li>
+                <li><a href="about.html" class="nav-item">About Us</a></li>
+                <li><a href="room.html" class="nav-item">Rooms</a></li>
+                <li><a href="services.html" class="nav-item">Services</a></li>
+                <li><a href="contact.html" class="nav-item">Contact</a></li>
+            </ul>
+            <div class="nav-auth">
+                <!-- note: auth-btn also has nav-item so it uses same glow/active style -->
+                <a href="authentication.html" class="auth-btn nav-item">Log In/Signup</a>
+            </div>
+        </nav>
+    </header>
+    <!-- ====== LOGO BELOW NAVBAR ====== -->
+    <div class="logo-container" role="img" aria-label="Aama Residency Logo">
+        <img src="images/logo.png" alt="Aama Residency Logo" class="hotel-logo">
+    </div>
+    <!-- ====== MAIN INTRODUCTION SECTION ====== -->
+    <main>
+        <section class="intro">
+            <div class="intro-content"> <!-- central content wrapper (max-width in CSS) -->
+                <h1>Welcome to Aama Residency</h1>
+                <p>
+                    Stay smart, stay comfortable! Aama Residency offers affordable rooms near Agra, Aligarh, and Greater Noida. 🏨🌿
+                    Perfect for sightseeing, business trips, or quick getaways — our cozy rooms and essential amenities ensure a hassle-free and budget-friendly stay.
+                </p>
+
+                <!-- =============================
+                     GLOBAL BOOK NOW BUTTON (site-wide)
+                     - Reuse this exact anchor on every page.
+                     - Default: light blue; Hover/Focus → gold; Active (pressed) → darker gold.
+                     - target="_blank" opens booking in new tab (optional).
+                     - rel for security when using target="_blank".
+                     ============================= -->
+                <a href="booking.html"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="global-book-btn"
+                   aria-label="Open booking page in new tab">
+                  BOOK NOW
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- ====== ABOUT SECTION ====== -->
+    <section class="about">
+        <div class="about-content">
+            <h2>About Aama Residency 🏨🌿</h2>
+            <p>
+                Finding a safe and hassle-free place to stay can be tricky nowadays — dodgy owners, hidden charges, and uncomfortable rooms are everywhere 😟.
+                At <strong>Aama Residency</strong>, we cut through all that noise ✅.
+            </p>
+            <p>
+                We offer affordable 💰, clean 🛏️, and cozy rooms near Agra, Aligarh, and Greater Noida, with transparent pricing 💳 and friendly service 🤝.
+                No surprises, no stress — just a comfortable stay where you can relax 😌, work 💻, or explore the city 🏙️ without worrying about the details.
+            </p>
+            <p>
+                Whether you’re here for sightseeing 🏛️, business 📊, or a quick getaway 🧳, our goal is simple:
+                <strong>make your stay hassle-free and enjoyable 🎉</strong>.
+            </p>
+        </div>
+    </section>
+
+    <!-- ====== ROOMS & SERVICES SECTION ====== -->
+    <section class="rooms-services">
+        <div class="rooms-services-content">
+            <h2>Our Rooms & Services 🛏️✨</h2>
+            <p>
+                At Aama Residency, we offer flexible and affordable stays crafted for working professionals 👨‍💻, students 🎓, and families 👨‍👩‍👧‍👦.
+                Whether you need a place for a day ☀️, a month 📅, or a year 🗓️ — we make your living experience smooth and stress-free.
+            </p>
+
+            <div class="room-card" role="region" aria-label="Room types and descriptions">
+                <div class="room-card-header">
+                    <h3>Room Options</h3>
+                    <p class="subtle">Choose what fits your needs — comfort, space, or a family-friendly suite.</p>
+                </div>
+
+                <div class="room-grid">
+                    <article class="room-type" aria-labelledby="standard-title">
+                        <h4 id="standard-title">Standard Room</h4>
+                        <p class="room-desc">Cozy and affordable — ideal for solo travelers and short stays.</p>
+                        <p class="room-meta">✔ Bed • ✔ Wi-Fi • ✔ Daily Cleaning</p>
+                    </article>
+
+                    <article class="room-type" aria-labelledby="deluxe-title">
+                        <h4 id="deluxe-title">Deluxe Room</h4>
+                        <p class="room-desc">Spacious layout with upgraded furnishings for a relaxed stay.</p>
+                        <p class="room-meta">✔ Larger Space • ✔ Seating • ✔ Premium Linens</p>
+                    </article>
+
+                    <article class="room-type" aria-labelledby="family-title">
+                        <h4 id="family-title">Family Suite</h4>
+                        <p class="room-desc">Extra space for families — additional beds and room to breathe.</p>
+                        <p class="room-meta">✔ Extra Beds • ✔ Family-Friendly • ✔ More Luggage Space</p>
+                    </article>
+                </div>
+
+                <div class="services-brief">
+                    <h4>Our Services Include:</h4>
+                    <ul>
+                        <li>24/7 Front Desk Support</li>
+                        <li>Free Wi-Fi</li>
+                        <li>Daily Housekeeping</li>
+                        <li>Airport Transfers (on request)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <p class="final-note">
+                Your comfort and satisfaction are our top priorities.
+                Book your stay with us today and experience hassle-free hospitality!
+            </p>
+        </div>
+    </section>
+
+    <!-- ====== FOOTER SECTION ====== -->
+    <footer>
+        <p>&copy; 2025 Aama Residency. All rights reserved.</p>
+    </footer>
+    <!-- ====== SCRIPT (Dynamic Time) ====== -->
+    <script src="script.js"></script> <!-- updates #datetime every second -->
+</body>
+</html>

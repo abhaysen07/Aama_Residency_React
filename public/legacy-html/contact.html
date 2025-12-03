@@ -1,0 +1,142 @@
+<!-- ============================================================
+     Aama Residency — contact.html
+     Author: Abhishek Kumar
+     Role: Founder & Developer
+     Email: abhishek.abhishek1996@gmail.com
+     Date Updated: 21 October 2025
+     Description: Contact page — includes address, support info,
+                  map location, and global Book Now button.
+     Notes: 
+     - Uses css/styles.css for all design.
+     - Uses script.js for live date/time + button interaction.
+     ============================================================ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ====== META INFORMATION ====== -->
+  <meta charset="utf-8" /> <!-- Set encoding for special characters -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" /> <!-- Mobile responsive view -->
+  <meta name="author" content="Abhishek Kumar" /> <!-- Author for SEO -->
+  <title>Contact — Aama Residency</title> <!-- Browser tab title -->
+
+  <!-- ====== FAVICON ====== -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico"> <!-- Site icon in browser tab -->
+
+  <!-- ====== LINK TO GLOBAL STYLESHEET ====== -->
+  <link rel="stylesheet" href="css/styles.css"> <!-- Includes all global design styles -->
+</head>
+
+<body class="contact-page">
+  <!-- ============================================================
+       HEADER SECTION — Includes Navbar and Logo
+       ============================================================ -->
+  <!-- ====== HEADER SECTION ====== -->
+    <header>
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-item active">Home</a></li>
+                <li><a href="about.html" class="nav-item">About Us</a></li>
+                <li><a href="room.html" class="nav-item">Rooms</a></li>
+                <li><a href="services.html" class="nav-item">Services</a></li>
+                <li><a href="contact.html" class="nav-item">Contact</a></li>
+            </ul>
+            <div class="nav-auth">
+                <!-- note: auth-btn also has nav-item so it uses same glow/active style -->
+                <a href="authentication.html" class="auth-btn nav-item">Log In/Signup</a>
+            </div>
+        </nav>
+    </header>
+
+  <!-- ============================================================
+       MAIN CONTENT SECTION
+       ============================================================ -->
+  <main>
+    <!-- ====== HERO INTRO ====== -->
+    <section class="contact-hero">
+      <h1>Contact Us</h1>
+      <p>We’re always happy to assist you — whether it’s booking details, travel help, or safety information.</p>
+    </section>
+
+    <!-- ====== CONTACT DETAILS ====== -->
+    <section class="contact-details">
+      <h2>Reach Aama Residency</h2>
+
+      <!-- Basic Info -->
+      <p><strong>Address:</strong> Aama Residency, Agra Shamshabad Road, Agra, Uttar Pradesh, India</p>
+      <p><strong>Phone:</strong> <a href="tel:+918650590984">+91 86505 90984 (Abhishek Kumar)</a></p>
+      <p><strong>Email:</strong> <a href="mailto:abhishek.abhishek1996@gmail.com">abhishek.abhishek1996@gmail.com</a></p>
+      <p><strong>Reception Hours:</strong> 24/7 Available</p>
+
+      <!-- ====== EMERGENCY CONTACTS ====== -->
+      <h3>Emergency & Local Contacts</h3>
+      <ul>
+        <li><strong>Ambulance:</strong> 108 (24×7 Emergency Medical Service)</li>
+        <li><strong>Police:</strong> 100</li>
+        <li><strong>UP Police Helpline:</strong> 112</li>
+        <li><strong>Fire Service:</strong> 101</li>
+        <li><strong>Women Helpline:</strong> 1091</li>
+        <li><strong>Nearest Hospital:</strong> Pushpanjali Hospital, Shamshabad Road, Agra</li>
+      </ul>
+
+      <!-- ====== DIRECTIONS ====== -->
+      <h3>How to Reach Us</h3>
+      <ul>
+        <li>Nearest Railway Station: Agra Cantt (approx 18 km)</li>
+        <li>Nearest Airport: Agra Airport (approx 10 km)</li>
+        <li>Landmark: Opposite CNG Petrol Pump, near Aama Residency main gate</li>
+      </ul>
+
+      <!-- ====== QUICK SUPPORT ====== -->
+      <h3>Quick Support</h3>
+      <p>For bookings, queries, or directions, call or WhatsApp us directly — we respond 24×7.</p>
+      <p><strong>WhatsApp:</strong> 
+        <a href="https://wa.me/918650590984" target="_blank" rel="noopener noreferrer">+91 86505 90984</a>
+      </p>
+
+      <!-- ====== GLOBAL BOOK NOW BUTTON ======
+           Styled via .global-book-btn in css/styles.css
+           Functionality handled via script.js
+           (opens booking.html in new tab) -->
+      <div style="margin-top: 20px;">
+        <a href="booking.html" 
+           class="global-book-btn"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Open booking page in new tab">
+          BOOK NOW
+        </a>
+      </div>
+    </section>
+
+    <!-- ====== GOOGLE MAP SECTION ====== -->
+    <section class="map-section">
+      <h2>Find Us on Google Maps</h2>
+      <!-- Embed from Google Maps, responsive width/height -->
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3558.979913514055!2d78.00552731504322!3d27.16091518301544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39747735fbe4f2e5%3A0xbca0e9f2c6bcb7c2!2sAgra%20Shamshabad%20Road!5e0!3m2!1sen!2sin!4v1688148491231!5m2!1sen!2sin"
+        width="100%"
+        height="400"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        title="Aama Residency location on Google Maps">
+      </iframe>
+    </section>
+  </main>
+
+  <!-- ============================================================
+       FOOTER SECTION
+       ============================================================ -->
+  <footer>
+    <p>&copy; 2025 Aama Residency. All rights reserved.</p>
+  </footer>
+
+  <!-- ============================================================
+       LINK TO GLOBAL JAVASCRIPT FILE
+       ============================================================ -->
+  <script src="script.js"></script>
+  <!-- Do not add any inline <script> here.
+       All interactivity (date/time, button, etc.) is handled by script.js -->
+</body>
+</html>
